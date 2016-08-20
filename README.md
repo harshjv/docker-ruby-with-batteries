@@ -1,6 +1,6 @@
 # Drake
 
-Dockeriszed development environment for Ruby + mongoDB + PostgreSQL + Redis.
+Dockeriszed development environment for [Ruby](https://www.ruby-lang.org/) with batteries included ([Docker Compose](https://docs.docker.com/compose/), [mongoDB](https://www.mongodb.com/), [PostgreSQL](https://www.postgresql.org/) & [Redis](http://redis.io/))
 
 
 ## Setup
@@ -25,7 +25,7 @@ Inside `drake` directory;
 
 > **Pro-Tip™**
 >
-> Create alias for frequently used commands.
+> Create aliases for frequently used commands.
 >
 >     alias drake='docker-compose run workspace rake'
 >     alias dbundle='docker-compose run workspace bundle'
@@ -50,7 +50,7 @@ After starting services using `docker-compose`, **mongoDB**, **PostgreSQL**, and
 
 ## Database Credentials
 
-See `Dockerfile` for corresponding database.
+See [docker-compose.yml](docker-compose.yml)
 
 
 ## Customize
