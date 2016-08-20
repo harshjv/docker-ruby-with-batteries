@@ -42,7 +42,7 @@ After starting services using `docker-compose`, **mongoDB**, **PostgreSQL**, and
 
 
 |  Database  |  Port  |
-|---------------------|
+|------------|--------|
 |   mongoDB  |  27017 |
 | PostgreSQL |  5432  |
 |    Redis   |  6379  |
