@@ -1,0 +1,39 @@
+version: "2"
+services:
+  mongo:
+    build: ./databases/mongo
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - data_volume
+  postgres:
+    build: ./databases/postgres
+    environment:
+      POSTGRES_DB: avicii
+      POSTGRES_USER: kygo
+      POSTGRES_PASSWORD: hardwell
+    ports:
+      - "5432:5432"
+    volumes_from:
+      - data_volume
+  redis:
+    build: ./databases/redis
+    ports:
+      - "6379:6379"
+    volumes_from:
+      - data_volume
+  data_volume:
+    build: ./volumes/data
+    volumes:
+      - "./data/postgres:/var/lib/postgres"
+      - "./data/redis:/data"
+      - "./data/mongo:/data/db"
+  application_volume:
+    build: ./volumes/application
+    volumes:
+      - "../:/app"
+  workspace:
+    build: ./workspace
+    tty: true
+    volumes_from:
+      - application_volume
